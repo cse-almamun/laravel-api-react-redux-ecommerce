@@ -1,9 +1,7 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import {
   increaseQuantity,
   decreaseQuantity,

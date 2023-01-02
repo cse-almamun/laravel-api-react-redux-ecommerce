@@ -28,11 +28,11 @@ export const discountAmmount = createSelector(
   (item, subtotal) => {
     let amount = 0.0;
     if (!isEmptyObject(item)) {
-      if (item.type == "percent") {
+      if (item.type === "percent") {
         if (subtotal > 300) {
           amount = subtotal * (item.value / 100);
         }
-      } else if (item.type == "fixed") {
+      } else if (item.type === "fixed") {
         if (subtotal > 1000) {
           amount = parseFloat(item.value);
         }

@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import ProductCard from "./Card/ProductCard";
 
 function LatestProducts() {
-  const [show, setShow] = useState(false);
   const { products: alldata } = useSelector((state) => state.products);
 
   const allProducts = alldata.data;
-  useEffect(() => {
-    if (alldata !== "undefined" || alldata.data.length > 0) {
-      setShow(true);
-    }
-  }, [alldata]);
 
   return (
     <Container className="my-3 py-3">

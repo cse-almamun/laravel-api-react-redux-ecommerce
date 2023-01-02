@@ -8,6 +8,7 @@ export const getAllCoupons = createAsyncThunk(
       let { data: alldata } = await axios.get(
         "http://localhost:8000/api/coupon"
       );
+      console.log(alldata.data.coupons);
       return alldata.data.coupons;
     } catch (error) {
       return axiosErrorHandler(error);
