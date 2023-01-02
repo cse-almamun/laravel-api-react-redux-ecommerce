@@ -51,11 +51,11 @@ function Cart() {
     } else {
       if (coupons.length > 0) {
         let coupon = coupons.find(
-          (item) => item.code === discountCoupon.toUpperCase()
+          (item) => item.code === discountCoupon.toLowerCase()
         );
 
         if (coupon) {
-          if (coupon.type === "percent") {
+          if (coupon.type == "percent") {
             if (subTotal > 300) {
               dispatch(applyCoupon(coupon));
             } else {
@@ -63,7 +63,7 @@ function Cart() {
                 "Coupon applicable only if your purchases amount is more than $300"
               );
             }
-          } else if (coupon.type === "fixed") {
+          } else if (coupon.type == "fixed") {
             if (subTotal > 1000) {
               dispatch(applyCoupon(coupon));
             } else {
@@ -113,7 +113,7 @@ function Cart() {
       <TopNavbar />
       <Container>
         <Row>
-          {!carts && (
+          {carts.length === 0 && (
             <div className="w-100 my-5 text-center text-danger">
               <h3>
                 You don't have any product in carts.{" "}
@@ -125,6 +125,7 @@ function Cart() {
             </div>
           )}
           {carts &&
+            carts.length > 0 &&
             carts.map((c) => {
               return (
                 <Col sm="12" lg="12" key={c.id}>
@@ -134,7 +135,7 @@ function Cart() {
             })}
         </Row>
 
-        {carts && (
+        {carts && carts.length > 0 && (
           <div className="my-3">
             <Card className="my-3">
               <Card.Body>
