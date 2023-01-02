@@ -8,7 +8,7 @@ export const getAllProducts = createAsyncThunk(
   async () => {
     try {
       let { data: alldata } = await axios.get(
-        "http://localhost:8000/api/products"
+        "http://laravelapi.almamun.me/api/products"
       );
       return alldata.data.products;
     } catch (error) {

@@ -27,7 +27,7 @@ const index = ({ order }) => {
           <tbody>
             {orderProducts &&
               orderProducts.map((item) => (
-                <tr>
+                <tr key={item.id}>
                   <td>
                     <img src={item.image} style={{ width: "40px" }} />
                   </td>

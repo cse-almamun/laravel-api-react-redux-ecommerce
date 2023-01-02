@@ -55,7 +55,7 @@ function Cart() {
         );
 
         if (coupon) {
-          if (coupon.type == "percent") {
+          if (coupon.type === "percent") {
             if (subTotal > 300) {
               dispatch(applyCoupon(coupon));
             } else {
@@ -63,7 +63,7 @@ function Cart() {
                 "Coupon applicable only if your purchases amount is more than $300"
               );
             }
-          } else if (coupon.type == "fixed") {
+          } else if (coupon.type === "fixed") {
             if (subTotal > 1000) {
               dispatch(applyCoupon(coupon));
             } else {

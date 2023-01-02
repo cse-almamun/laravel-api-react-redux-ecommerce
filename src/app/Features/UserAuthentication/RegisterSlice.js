@@ -7,12 +7,12 @@ export const userRegistration = createAsyncThunk(
   async (formdata) => {
     try {
       let options = {
-        Headers: {
+        headers: {
           "Content-Type": "application/json",
         },
       };
       const { data: all } = await axios.post(
-        "http://localhost:8000/api/register",
+        "http://laravelapi.almamun.me/api/register",
         formdata,
         options
       );

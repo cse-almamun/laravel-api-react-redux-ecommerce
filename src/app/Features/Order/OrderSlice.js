@@ -7,7 +7,6 @@ export const getUserOrders = createAsyncThunk(
   "orders/fetchOrders",
   async (token) => {
     try {
-      console.log(token);
       let options = {
         headers: {
           Accept: "application/json",
@@ -16,9 +15,10 @@ export const getUserOrders = createAsyncThunk(
         },
       };
       const { data: all } = await axios.get(
-        "http://localhost:8000/api/order",
+        "http://laravelapi.almamun.me/api/order",
         options
       );
+      console.log(all);
       return all.data;
     } catch (error) {
       return axiosErrorHandler(error);
@@ -39,10 +39,11 @@ export const submiutUserOrders = createAsyncThunk(
         },
       };
       let { data } = await axios.post(
-        "http://localhost:8000/api/order",
+        "http://laravelapi.almamun.me/api/order",
         formdata,
         options
       );
+      console.log(data);
       return data;
     } catch (error) {
       return axiosErrorHandler(error);

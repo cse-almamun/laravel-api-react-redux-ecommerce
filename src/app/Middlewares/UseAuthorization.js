@@ -6,7 +6,7 @@ import { LoginState } from "../Features/UserAuthentication/LoginSlice";
 const UseAuthorization = () => {
   const { token } = useSelector(LoginState);
   let location = useLocation();
-  return token !== null ? (
+  return token ? (
     <Outlet />
   ) : (
     <Navigate to={"/login"} state={{ from: location }} replace />

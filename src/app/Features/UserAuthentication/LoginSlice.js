@@ -13,7 +13,7 @@ export const userLogin = createAsyncThunk(
         },
       };
       const { data: all } = await axios.post(
-        "http://localhost:8000/api/login",
+        "http://laravelapi.almamun.me/api/login",
         formdata,
         options
       );
@@ -35,7 +35,7 @@ export const userLogout = createAsyncThunk("user/userLogout", async (token) => {
     };
 
     let { data } = await axios.post(
-      "http://localhost:8000/api/logout",
+      "http://laravelapi.almamun.me/api/logout",
       {},
       options
     );

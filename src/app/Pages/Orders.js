@@ -14,10 +14,9 @@ const Orders = () => {
 
   //dispatch form redux
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getUserOrders(token));
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   return (
     <Fragment>

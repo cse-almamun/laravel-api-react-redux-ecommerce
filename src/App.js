@@ -6,6 +6,7 @@ import PageNotFound from "./app/Pages/PageNotFound";
 import Cart from "./app/Pages/Cart";
 import Login from "./app/Pages/Login";
 import Orders from "./app/Pages/Orders";
+import UseAuthorization from "./app/Middlewares/UseAuthorization";
 function App() {
   return (
     <Fragment>
@@ -14,8 +15,10 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Registration />} />
         <Route path="cart" element={<Cart />} />
-        <Route path="orders" element={<Orders />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route element={<UseAuthorization />}>
+          <Route path="orders" element={<Orders />} />
+        </Route>
       </Routes>
     </Fragment>
   );

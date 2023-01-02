@@ -6,7 +6,7 @@ export const getAllCoupons = createAsyncThunk(
   async () => {
     try {
       let { data: alldata } = await axios.get(
-        "http://localhost:8000/api/coupon"
+        "http://laravelapi.almamun.me/api/coupon"
       );
       return alldata.data.coupons;
     } catch (error) {

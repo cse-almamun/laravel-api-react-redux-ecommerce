@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import App from "../../../App";
 
 export const AppliedCouponSlice = createSlice({
   name: "appliedCoupon",
